@@ -1,0 +1,17 @@
+---
+import Recipe from '$layouts/Recipe.astro'
+import image1 from '$assets/images/recipe-03a.webp'
+import image2 from '$assets/images/recipe-03b.webp'
+import video from '$assets/videos/recipe-03.mp4'
+---
+
+<Recipe
+	video={video}
+	image1={image1}
+	image2={image2}
+	color="#787530"
+	title="La magia de los Huevos Estrellados (made in Aragón)"
+	description="En la cocina, a veces la simplicidad es la clave para una experiencia sublime. Imagina una tarde en la que el aroma de las patatas fritas se mezcla con el sutil toque de la trufa, y los huevos estrellados descansan sobre una cama de patatas. Lo básico, a veces es lo más exquisito. "
+	ingredients={['4 huevos frescos de agricultura ecológica', '200 g de jamón de Teruel DOP loncheado', '500 g de patatas', '1 cebolla de Fuentes de Ebro DOP', '1 pimiento verde de agricultura ecológica', '2 dientes de ajo', 'Trufa', 'Aceite de Oliva Virgen Extra Aceite del Bajo Aragón DOP (cantidad necesaria)', 'Sal y pimienta negra al gusto']}
+	steps={['Pelar y cortar las patatas en rodajas finas.', 'Lavar y picar la cebolla y el pimiento verde.', 'Pelar y picar los ajos.', 'Calentar aceite de oliva en una sartén y freír las patatas hasta que estén doradas y crujientes.', 'Escurrir las patatas en papel absorbente y reservar.', 'En la misma sartén, saltear la cebolla y el pimiento verde hasta que estén pochados.', 'Añadir los ajos picados y cocinar durante un minuto más.', 'Incorporar las patatas fritas y mezclar bien.', 'Salpimentar al gusto.', 'En otra sartén, freír los huevos al gusto (estrellados, fritos, escalfados).', 'Disponer las patatas a lo pobre en una fuente o plato.', 'Colocar encima los huevos fritos.', 'Cubrir con las lonchas de jamón de Teruel DOP.', 'Añadir trufa laminada.', 'Servir inmediatamente.']}
+/>

@@ -1,0 +1,26 @@
+---
+import Recipe from '$layouts/Recipe.astro'
+import image1 from '$assets/images/recipe-01a.webp'
+import image2 from '$assets/images/recipe-01b.webp'
+import video from '$assets/videos/recipe-01.mp4'
+---
+
+<Recipe
+	video={video}
+	image1={image1}
+	image2={image2}
+	color="#AB5A5A"
+	title="Ternasco de Aragón asado con verduras de temporada y miel de romero"
+	description="Proveniente de los corderos jóvenes de la región de Aragón, su carne tierna y jugosa es perfecta para preparaciones al horno que resaltan lo mejor de este producto con Indicación Geográfica Protegida (IGP)."
+	ingredients={['1 pierna de Ternasco de Aragón IGP (aproximadamente 2 kg)', '2 cebollas Fuentes de Ebro DOP', '2 pimientos rojos de agricultura ecológica', '2 tomates rosa', '1 berenjena de agricultura ecológica', '2 patatas', '2 dientes de ajo', '2 ramitas de romero fresco', '2 cucharadas de miel de romero de artesanía alimentaria', 'Aceite de Oliva Virgen Extra de la Sierra del Moncayo DOP (cantidad necesaria)', 'Sal y pimienta negra al gusto']}
+	steps={[
+		'Precalentar el horno a 180ºC. Este es el primer paso para asegurar que el Ternasco se cocine uniformemente.',
+		'Atar la pierna de Ternasco con hilo de cocina. Esto permitirá que la pieza mantenga su forma durante el asado, favoreciendo una cocción homogénea.',
+		'Frotar el Ternasco con aceite de oliva, sal y pimienta. El Aceite de Oliva Virgen Extra de la Sierra del Moncayo aportará un toque afrutado y equilibrado que complementará el sabor de la carne.',
+		'Colocar las verduras peladas y cortadas en trozos grandes en una fuente de horno. Utilizar ingredientes frescos y ecológicos como cebolla Fuentes de Ebro, pimientos rojos, tomates rosa, berenjena y patatas asegurará una combinación deliciosa de sabores.',
+		'Salpimentar las verduras y añadir las ramitas de romero fresco, que impregnarán el asado con su inconfundible aroma y colocar la pierna de Ternasco encima de las verduras en la fuente, asegurándose de que todo esté bien distribuido para una cocción pareja.',
+		'Regar el Ternasco y las verduras con un poco de aceite de oliva y un toque de miel de romero. Este último ingrediente es esencial para aportar una suave dulzura que complementa la intensidad de la carne y el romero.',
+		'Asar en el horno durante 1 hora y 30 minutos, o hasta que el Ternasco esté dorado por fuera y tierno por dentro. Durante la cocción, es importante regar la carne ocasionalmente con los jugos que se van liberando.',
+		'Una vez listo, dejar reposar durante 10 minutos antes de trinchar. Este paso es crucial para que los jugos se redistribuyan y la carne quede aún más jugosa.',
+	]}
+/>

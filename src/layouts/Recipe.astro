@@ -1,0 +1,89 @@
+---
+import { Image } from 'astro:assets'
+import Layout from '$layouts/Layout.astro'
+import Icon from '$components/Icon.astro'
+import logo01 from '$assets/images/logo-01.webp'
+import logo02 from '$assets/images/logo-02.webp'
+import texture01 from '$assets/images/texture-01.svg'
+
+interface Props {
+	color: string
+	title: string
+	description: string
+	video: string
+	image1: ImageMetadata
+	image2: ImageMetadata
+	ingredients: string[]
+	steps: string[]
+}
+
+const { color, title, description, video, image1, image2, ingredients, steps } = Astro.props
+---
+
+<Layout>
+	<section class="bg-map bg-contain bg-top pb-24 pt-8">
+		<div class="container relative">
+			<div class="flex items-center justify-between">
+				<a href="/">
+					<Image class="w-28 md:w-40" src={logo01} width={160} densities={[2]} quality={90} alt="" />
+				</a>
+				<Image class="w-48 md:w-64" src={logo02} width={256} densities={[2]} quality={90} alt="" />
+			</div>
+
+			<div class="mt-24 xl:px-24">
+				<div class="reveal mb-24">
+					<div class="container-inline-size relative z-10 max-w-xl reveal:translate-y-24 reveal:opacity-0 max-sm:-mx-16 md:-mb-8">
+						<Image class="w-full" src={texture01} alt="" />
+						<h2 style={`color:${color}`} class="absolute left-[16cqw] right-[10cqw] top-[6cqw] -rotate-[5deg] font-serif text-[4cqw] leading-none">{title}</h2>
+					</div>
+					<div class="grid items-center gap-y-12 lg:grid-cols-3">
+						<div class="rotate-6 overflow-clip reveal:translate-x-24 reveal:opacity-0 lg:order-2 lg:col-span-2 lg:ml-20">
+							<Image class="w-full" src={image1} width={763} densities={[2]} quality={90} alt="" />
+						</div>
+						<div class="reveal:-translate-x-24 reveal:opacity-0">
+							<p class="mb-8 text-sm">{description}</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="reveal">
+					<h2 class="mb-6 font-serif text-3xl reveal:translate-y-24 reveal:opacity-0">Ingredientes</h2>
+					<ul class="grid list-disc gap-6 pl-6 reveal:translate-y-24 reveal:opacity-0 revealed:delay-100">
+						{ingredients.map(ingredient => <li>{ingredient}</li>)}
+					</ul>
+				</div>
+
+				<div class="reveal my-24">
+					<video class="w-full reveal:translate-y-24 reveal:opacity-0" src={video} controls></video>
+				</div>
+
+				<div class="reveal">
+					<h2 class="mb-6 font-serif text-3xl reveal:translate-y-24 reveal:opacity-0">Paso a paso: cómo preparar este manjar</h2>
+					<ol class="grid list-decimal gap-6 pl-6 reveal:translate-y-24 reveal:opacity-0 revealed:delay-100">
+						{steps.map(step => <li>{step}</li>)}
+					</ol>
+				</div>
+
+				<div class="reveal mx-auto my-32 max-w-3xl">
+					<div class="relative reveal:translate-y-24 reveal:opacity-0">
+						<Image class="w-full rotate-6" src={image2} width={1152} densities={[2]} quality={90} alt="" />
+						<svg class="absolute -top-14 left-1/2 -ml-20 w-40" viewBox="0 0 140 83">
+							<path fill="#878787" fill-opacity=".2" d="M138.7 50.6q-1.4 1.4-2.4 3.7c-1.6 4 4.4 6.9 2.8 10.8s-2.4 3.6-4 7.5-5.6 2.7-7.2 6.6c-1 2.4-1.4 3.1-2.4 3.7 0 0-27.9-10.6-61.6-24.4A2362 2362 0 0 1 0 31.1a10 10 0 0 0 3.3-2.6c2.7-3.3 6-3 7.5-6.8 1.6-4-1.8-5.4-.2-9.3s7-3.6 8.7-7.5c.6-1.6 0-3.3-.6-4.9z"></path>
+							<path fill="#ebe1c7" fill-opacity=".8" d="M138.7 50.6q-1.4 1.4-2.4 3.7c-1.6 4 4.4 6.9 2.8 10.8s-2.4 3.6-4 7.5-5.6 2.7-7.2 6.6c-1 2.4-1.4 3.1-2.4 3.7L0 31.1a10 10 0 0 0 3.3-2.6c2.7-3.3 6-3 7.5-6.8 1.6-4-1.8-5.4-.2-9.3s7-3.6 8.7-7.5c.6-1.6 0-3.3-.6-4.9z"></path>
+						</svg>
+					</div>
+				</div>
+
+				<div class="flex justify-center">
+					<a style={`background:${color}`} class="inline-flex items-center gap-3 p-3 px-6 transition-transform hover:scale-90" href="/">
+						<Icon class="w-4 shrink-0 rotate-180" name="arrow" />
+						<span>Volver</span>
+					</a>
+				</div>
+			</div>
+
+			<p class="mb-8 mt-48 text-center text-sm">El tiempo content para</p>
+			<Image class="mx-auto w-40" src={logo01} width={160} densities={[2]} quality={90} alt="" />
+		</div>
+	</section>
+</Layout>
